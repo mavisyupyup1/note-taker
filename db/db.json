@@ -1,14 +1,19 @@
 {
-  "notes": [
+  "notesArray": [
     {
       "title": "Test Title",
       "text": "Test text",
       "id": "0"
     },
     {
-      "title": "Stuff Title",
-      "text": "Test asdftext",
-      "id": "1"
+      "title": "Test new Title",
+      "text": "Test  new text",
+      "id": "b072"
+    },
+    {
+      "title": "asd",
+      "text": "asd",
+      "id": "7d47"
     }
   ]
 }
