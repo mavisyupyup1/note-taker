@@ -41,7 +41,7 @@ router.delete("/notes/:id", function(req,res){
       return currNote.id != notesId;
     })
     for (currNote of notes) {
-      currNote.id = newNoteId.toString()
+      currNote.id = newNotesId.toString()
       newNotesId++;
     }
     fs.writeFileSync('db/db.json',JSON.stringify(notes),'utf-8',(err,date)=>{
