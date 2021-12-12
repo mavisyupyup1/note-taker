@@ -5,8 +5,6 @@ const app = express();
 const apiRoutes = require('./routes/apiRoutes');
 const htmlRoutes = require('./routes/htmlRoutes');
 
-// Helper method for generating unique ids
-const uuid = require('./helpers/uuid');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
