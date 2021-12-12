@@ -18,8 +18,8 @@ router.post('/notes', (req, res) => {
     if (err) throw err;
     let notes = JSON.parse(data);
     let newNote = req.body;
-  let uniqueId = (notes.length).toString()
-  newNote.id =uniqueId;
+    let uniqueId = (notes.length).toString()
+    newNote.id =uniqueId;
     console.log(newNote)
     notes.push(newNote)
     fs.writeFileSync("db/db.json",JSON.stringify(notes),"utf-8",(err,data)=>{
@@ -30,7 +30,8 @@ router.post('/notes', (req, res) => {
 })
 });
 // delete api/notes/:id --should receive a query parameter containing the uuid to delete the note. to do so, read db.json, find the note with the id, filter and then rewrite the notes that's not with the id in db.json
-router.delete("/api/notes/:id", function(req,res){
+router.delete("/notes/:id", function(req,res){
+  console.log('here in delete function')
   fs.readFile('db/db.json','utf-8',(err,data)=>{
     if (err) throw err;
     let notes = JSON.parse(data);
@@ -39,12 +40,10 @@ router.delete("/api/notes/:id", function(req,res){
     notes = notes.filter(currNote =>{
       return currNote.id != notesId;
     })
-
     for (currNote of notes) {
       currNote.id = newNoteId.toString()
       newNotesId++;
     }
-
     fs.writeFileSync('db/db.json',JSON.stringify(notes),'utf-8',(err,date)=>{
       if (err) throw err;
       console.log("note deleted successfully!")
