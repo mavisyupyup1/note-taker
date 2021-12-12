@@ -22,3 +22,11 @@ http://localhost:3001/
 
 ## Demo
 ![demo_video](public/assets/Note_Taker_demo.gif)
+
+## Contribution
+* [Starter_Code](https://github.com/coding-boot-camp/miniature-eureka)
+
+## License
+MIT License
+
+Copyright (c) 2021 Grace Liu
